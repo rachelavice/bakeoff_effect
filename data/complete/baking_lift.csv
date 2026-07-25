@@ -1,0 +1,68 @@
+Technical,baseline_share,post_air_share,zero_baseline_flag,lift,lift_diff
+ arlettes,0.0,0.0,True,,0.0
+ baguettes,0.0,0.0,True,,0.0
+ belgian buns,0.0,0.0,True,,0.0
+ brandy snaps,0.0,0.0,True,,0.0
+ chocolate mini rolls,0.0,0.0,True,,0.0
+ chocolate teacakes,0.0,0.0,True,,0.0
+ ciabattas,0.0,0.0,True,,0.0
+ custard creams,0.0,0.0,True,,0.0
+ devonshire splits,0.0,0.0002754820936639118,True,,0.0002754820936639118
+ egg custard tarts,0.0,0.0,True,,0.0
+ english muffins,0.0,0.0,True,,0.0
+ florentines,0.0,0.0,True,,0.0
+ fondant fancies,0.0,0.0,True,,0.0
+ fortune cookies,0.0,0.0,True,,0.0
+ garibaldi biscuits,0.0,0.0,True,,0.0
+ ginger biscuits,0.0,0.0,True,,0.0
+ gluten-free pita bread,0.0,0.0,True,,0.0
+ heart-shaped lace pancakes,0.0,0.0,True,,0.0
+ miniature pineapple upside-down cakes,0.0,0.0,True,,0.0
+ molten chocolate puddings,0.0,0.0,True,,0.0
+ pastéis de nata,0.0,0.0,True,,0.0
+ sticky toffee puddings,0.0,0.0,True,,0.0
+ stroopwafels,0.0,0.0,True,,0.0
+ vegan sausage rolls,0.0,0.0,True,,0.0
+ viennese whirls,0.0,0.0,True,,0.0
+ white chocolate and blackberry cheesecakes,0.0,0.0,True,,0.0
+angel food cake,0.0,0.0,True,,0.0
+apricot couronne,0.0,0.0,True,,0.0
+bakewell tart,0.0,0.0,True,,0.0
+caterpiller cake,0.0,0.0,True,,0.0
+charlotte royale,0.0,0.0,True,,0.0
+cherry cake,0.0,0.0,True,,0.0
+chocolate babka,0.00016666666666666666,0.0004768002955662565,False,2.8608017733975393,0.00031013362889958983
+chocolate roulade,0.0,0.0,True,,0.0
+chocolate soufflé,0.0,0.0,True,,0.0
+coffee and walnut battenberg,0.0,0.0,True,,0.0
+cornish pasties,0.0,0.0,True,,0.0
+cottage loaf,0.0,0.0,True,,0.0
+crème caramel,0.0,0.0,True,,0.0
+eight-strand plaited loaf,0.0,0.0,True,,0.0
+focaccia,0.0,0.0,True,,0.0
+frasier cake,0.0,0.0,True,,0.0
+hazelnut dacquoise,0.0,0.0,True,,0.0
+kougin-amann,0.0,0.0,True,,0.0
+lemon and thyme drizzle cake,0.0,0.0,True,,0.0
+lemon meringue pie,0.0004962326455402916,0.0,False,0.0,-0.0004962326455402916
+malt loaf,0.0,0.0,True,,0.0
+matcha crepe cake,0.0,0.0,True,,0.0
+mille-feuille,0.0,0.0,True,,0.0
+mini pear pies,0.0,0.0,True,,0.0
+pain aux raisins,0.0,0.0,True,,0.0
+pizza margherita,0.0005376344086021505,0.0,False,0.0,-0.0005376344086021505
+prinsesstårta,0.0,0.0,True,,0.0
+prinzregententorte,0.0,0.0,True,,0.0
+queen of puddings,0.0,0.0,True,,0.0
+red velvet cake,0.0,0.00028768699654775604,True,,0.00028768699654775604
+s'mores,0.0,0.0,True,,0.0
+sachertorte,0.0,0.0,True,,0.0
+schichttorte,0.0,0.0,True,,0.0
+scones,0.0,0.0,True,,0.0
+spring rolls,0.0,0.0,True,,0.0
+tart aux pommes,0.00020964360587002098,0.0,False,0.0,-0.00020964360587002098
+tarte au citron,0.0,0.0,True,,0.0
+the signature chocolate cake with fresh raspberries,0.0,0.0,True,,0.0
+tiramisu cake,0.0,0.0,True,,0.0
+treacle tart,0.0,0.0,True,,0.0
+victoria sandwich,0.0,0.0,True,,0.0
