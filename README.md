@@ -2,7 +2,7 @@
 
 A data-driven look at how The Great British Bake Off's technical challenges shape what real-world bakers search for and bake, using Google Trends and Reddit as proxies for viewer behavior.
 
-**[Read the piece →]([#](https://rachelavice.github.io/bakeoff_effect/))**
+**[Read the piece →](https://rachelavice.github.io/bakeoff_effect/)**
 
 ## Overview
 
