@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Bakeoff Effect</title>
+
+    <!------ Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!------ Styles -->
+
+    <!-- <link rel="stylesheet" type="text/css" href="scrolly-container.css"> -->
+
+    <style>
+    
+
+        body {
+            background-color: #fff;
+            margin:auto;
+            padding: 2em;
+            max-width: 90vw;
+            font-size: 22px;
+            font-family: "Lato", sans-serif;
+            color: #223843; 
+        }
+
+        .dashed-grid-paper {
+
+            --grid-size: 30px;
+            --grid-strength: 1px;
+            --grid-dash: 5px;
+            --grid-gap: 10px;
+            --grid-color: #E4EEF1;
+            --paper-color: #fff;
+
+        background-color: var(--paper-color);
+        background-size: var(--grid-gap) var(--grid-gap), var(--grid-size) var(--grid-size);
+        background-image:
+            linear-gradient(to bottom, transparent var(--grid-dash), var(--paper-color) var(--grid-dash)), 
+            linear-gradient(to right, var(--grid-color) var(--grid-strength), transparent var(--grid-strength)),
+            linear-gradient(to right, transparent var(--grid-dash), var(--paper-color) var(--grid-dash)),
+            linear-gradient(to bottom, var(--grid-color) var(--grid-strength), transparent var(--grid-strength));
+        }
+
+        #hero_linechart{
+            width:50vw;
+            height:60vh;
+            margin: auto;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+
+
+        #small-multiples-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2.5em;
+            width: 55vw;
+            margin: auto;
+        }
+
+        #historicalBarChart {
+            width:50vw;
+            height:60vh;
+            margin: auto;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+
+        .multiple-cell h4 {
+            font-size: 12px;
+            margin-bottom: 6px;
+            text-align: center;
+            }
+
+        .content {
+            max-width: 50%;
+            margin: auto;
+            padding-bottom: 3vh;
+            padding-top: 2h;
+            }
+
+
+        .intro-wrapper{
+            position: relative;
+            }
+
+        .intro {
+            display: flex;
+            align-items: center;
+            }
+
+        .closing-wrapper {
+            position: relative;
+            height: 200vh;
+        }
+
+        .closing {
+            position: sticky;
+            top: 20%;
+            max-width: 50%;
+            margin: auto;
+        }
+
+        .byline {
+            padding-bottom: 3vh;
+            }
+
+        h1 {
+            font-family: "Homemade Apple", cursive;
+            font-weight: bold;
+            font-size: 68px;
+            margin: auto;
+            padding-bottom: 1vh;
+            }
+
+        h2 {
+            font-family: "Lato", sans-serif;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 42px;
+            padding-bottom: 16px;
+        }
+
+        /* Smaller tablets and mobiles */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            h1{
+                font-size:32px;
+            }
+            .subhead{
+                font-size: 16px;
+            }
+            h2{
+                font-size:24px;
+            }
+        }
+
+        .subhead {
+            font-family: "Lato", sans-serif;
+            font-size: 24px;
+            justify-content: center;
+            margin-bottom: 0;
+            padding-bottom: .5vh;
+            color: #223843;
+            }
+                
+        a {
+            color: #e48fb4;
+            font-weight: bold;
+            }
+
+        footer {
+            background: #FF4365;
+            text-align: center;
+            font-size: 14px;
+            padding-top: 10vh;
+            padding-bottom: 5%;
+            position: relative;
+            width:100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-bottom: -3em;
+            
+            }
+        
+        footer h2 {
+            color: #fff;
+            }
+
+        footer a{
+            color: #33A1FD;
+            font-weight: bold;
+        }
+
+        .footer-p{
+            color: #fff;
+            text-align: left;
+            margin-top: 36px;
+            font-size: 18px;
+            }
+
+        #scrolly-timeline .scrolly-event {
+            position: relative; 
+            width: 100%;
+        }
+
+        
+    </style>
+
+</head>
+<body class="dashed-grid-paper">
+    <div class="intro-wrapper">
+      <div class="intro">
+      <div class="content">
+        <div class="header">
+          <h1>The Bake Off Effect</h1>
+          <p class="subhead">How the Great British Bake Off brings bakes out of obscurity and bakers into the kitchens.</p>
+        </div>
+        <div class="byline">
+          <p>By <a href="https://www.linkedin.com/in/rachel-vice/">Rachel Vice</a></p>
+        </div>
+        <div class="body-content">
+            <p>Every autumn since 2010, millions of fans have gathered in their living rooms to watch ten home bakers battle for a simple etched glass cake stand on The Great British Bake Off (GBBO).</p>
+
+            <p>In the fall of 2024, I decided I wanted to join in.</p>
+            <p> Because I am not a resident of the U.K. and don’t qualify to compete myself, this looked less like filling out an application to the show and more like baking along with that season’s challenges.</p>
+
+            <p>It turns out, I was hardly alone. </p>
+
+            <p>With the summer drawing to a close, on the heels of the new season of GBBO premiering, I set out to understand if there are more fans like me, what moves them, and where I might find them.</p>
+        </div> 
+      </div>
+    </div>
+    <div class="content">
+        <h2>The Weekly Muse</h2>
+        <div class="body-content">
+            <p>[placeholder text about the search trend spikes] </p>
+        </div>
+        <div id ="hero_linechart"></div>
+    </div>
+    
+    <div id ="small-multiples-grid"></div>
+    <div id ="historicalBarChart"></div>
+  </div>
+  
+  
+
+    <section class="closing-wrapper">
+        <div class="closing">
+            <h2>What does it mean that we stopped laughing together?</h2>
+            <p>Over the past 75 years, there have been three distinct changes in how comedy television shows leverage laughter. From cueing us with artificial laugh tracks to a turn to "authenticity" with the use of a live studio audience to the absence of these cues altogether.</p>
+            <p>And while it's hard to say for certain what is ultimately driving these trends, it feels worth stating that the way we watch television has fundamentally changed, and with it, our relationship to comedy has changed too.</p>
+            <p>Gone are the days of my parents' generation, where friends and family congregated around a television set to watch this week's new episode of a favorite household sitcom. Over time, this routine has given way to something more insular, and a little quieter, as we have shows at our fingertips to watch in solitude.</p>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="content">
+        <div>
+            <h2>Methodology</h2>
+            <p class="footer-p">The data for this story draws on the top 30 highest-rated U.S. television programs for each broadcast season from 1950 to 2025, as ranked by <a href="https://www.nielsen.com/about-us/about/">Nielsen Media Research</a> and compiled on <a href="https://en.wikipedia.org/wiki/Top-rated_United_States_television_programs_by_season">Wikipedia</a>.</p>
+            <p class="footer-p">Each show was matched against <a href="https://www.themoviedb.org/">The Movie Database (TMDB) data</a> to identify genre. For the purposes of this study, television programs were filtered to comedies.</p>
+
+        </div>
+            <p class="footer-p">You can find the code for this analysis <a href="https://github.com/rachelavice/evolution_of_laugh_tracks">here</a>.</p>
+        </div>
+    </footer>
+        
+    </div>
+
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="bakeoffLineChart.js"></script>
+     <script src="bakeoffBarChart.js"></script>
+
+    <script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+    const scroller = scrollama();
+
+    scroller
+        .setup({
+        parent: document.querySelector("#scrolly-timeline"),
+        step: "#scrolly-timeline .step",
+        offset: 0.5,
+        debug: false,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+        const event = new CustomEvent("stepin", { detail: { direction: direction } });
+        element.dispatchEvent(event);
+        })
+        .onStepExit(function ({ element, index, direction }) {
+        if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } });
+            element.previousElementSibling.dispatchEvent(event);
+        }
+        });
+
+    window.addEventListener("resize", scroller.resize);
+    })();
+
+    d3.select("#tl-step1").on('stepin', () => showTimelineEventsUpTo("laff-box"));
+    d3.select("#tl-step2").on('stepin', () => showTimelineEventsUpTo("canned"));
+    d3.select("#tl-step3").on('stepin', () => showTimelineEventsUpTo("groucho"));
+    d3.select("#tl-step4").on('stepin', () => showTimelineEventsUpTo("studio"));
+    d3.select("#tl-step5").on('stepin', () => showTimelineEventsUpTo("silence"));
+    </script>
+
+    <script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+    const scroller = scrollama();
+
+    scroller
+        .setup({
+        parent: document.querySelector("#scrolly-linecharts"),
+        step: "#scrolly-linecharts .step",
+        offset: 0.5,
+        debug: false,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+        const event = new CustomEvent("stepin", { detail: { direction: direction } });
+        element.dispatchEvent(event);
+        })
+        .onStepExit(function ({ element, index, direction }) {
+        if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } });
+            element.previousElementSibling.dispatchEvent(event);
+        }
+        });
+
+    window.addEventListener("resize", scroller.resize);
+    })();
+
+    d3.select("#linechart-step1").on('stepin', () => emphasizeLineChart("canned_laugh_track"));
+    d3.select("#linechart-step2").on('stepin', () => emphasizeLineChart("studio_audience"));
+    d3.select("#linechart-step3").on('stepin', () => emphasizeLineChart("no_added_laughter"));
+    </script>
+
+  <style>
+    /* Change this to adjust the padding between steps */
+    .step {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+  </style>
+</body>
+</html>
