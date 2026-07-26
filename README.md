@@ -59,6 +59,14 @@ The findings suggest the effect is real, but concentrated: search interest relia
 - [pytrends](https://github.com/GeneralMills/pytrends) for Google Trends data
 - Python / pandas for data cleaning and analysis
 
+## New skills and approaches
+
+This was my first project using Playwright Browser Automation for scraping, and doing more involved styling with RoughJS. I also tried my best to build in responsiveness as I went.
+
+## What I'd do differently with more time
+
+If I had more time for this piece, I'd push the visual styling further. I contemplated adding in hand-illustrated spot illustrations for each of the highlighted bakes.
+
 ## Author
 
 [Rachel Vice](https://www.linkedin.com/in/rachel-vice/)
