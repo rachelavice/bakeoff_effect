@@ -103,8 +103,8 @@
         .attr("x2", x(0))
         .attr("y1", -20)
         .attr("y2", height)
-        .attr("stroke", "#333")
-        .attr("stroke-width", 1)
+        .attr("stroke", "#223843cc")
+        .attr("stroke-width", 2)
         .attr("stroke-dasharray", "4,8");
 
       g.append("text")
@@ -180,15 +180,15 @@
         .attr("x2", x(0))
         .attr("y1", 0)
         .attr("y2", innerHeight)
-        .attr("stroke", "#ccc")
+        .attr("stroke", "#223843cc")
         .attr("stroke-width", 1);
 
       var points = techData.map(d => [x(d.day_offset), y(d.value)]);
 
       var lineNode = cellRc.linearPath(points, {
         stroke: "#c4afcc",
-        strokeWidth: 2,
-        roughness: 1,
+        strokeWidth: 3,
+        roughness: .8,
         seed: i + 1, // unique but stable seed per small multiple
       });
 

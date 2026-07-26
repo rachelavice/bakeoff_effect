@@ -56,15 +56,17 @@
 
         #small-multiples-grid {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(4, 1fr);
             gap: 2.5em;
             width: 100%;
             margin: auto;
             padding-top: 120px;
+            padding-bottom: 10%;
         }
 
-        #historicalBarChart {
+        #historicalBarChart,
+        #redditBarChart {
             width:100%;
             height:60vh;
             margin: auto;
@@ -242,15 +244,15 @@
 
     <section id="baking-share-data">
     <div class="content">
-        <h2>Are people actually baking these recipes, or just searching?</h2>
+        <h2>Are people actually baking these recipes?</h2>
         <div class="body-content">
-            <p>While recipe search trend data indicates intent to bake, I found myself interested in one step further: what technicals are people actually baking?</p>
+            <p>Recipe search trend data indicates intent to bake, but I found myself interested in one step further: <span style="background-color: #c4afcccc;"><i>what technicals are people actually baking?</i></span></p>
             <p>To understand this, I took to Reddit to find out.</p>
             <p>While I was anticipating baking communities on Reddit to substantiate my Google Search trend findings, it wasn't quite so clear cut.</p>
             <p>Across over half a million posts in the r/baking subreddit since the first episode of The Great British Bake Off aired in August of 2010, very few were from bakers showing off their own GBBO technical skills in the weeks following an episode airing.</p>
             <p>It turns out, those that bake along weren’t sharing in r/baking. They were, however, sharing their attempts, triumphs and defeats in the r/bakeoff subreddit.</p>
             <p>While r/baking saw no lift in the share of posts about GBBO technicals in the weeks after an episode aired, r/bakeoff saw a significant lift.</p>
-            <div id ="historicalBarChart"></div>
+            <div id ="redditBarChart"></div>
             <p>The Bake Off Effect is real. People do search for recipes featured on the Great British Bake Off, and they follow through with baking them. However, its effect on baking is concentrated within the fandom, rather than a diffuse impact that ripples through the home baking community.</p>
         </div>  
     </div>
@@ -261,7 +263,7 @@
         <h2>The Bake Along Leaderboard</h2>
         <div class="body-content">
             <p>Take a look below to see what Great British Bake Off fans are searching for, what they’re actually baking, and what challenges rise to the top.</p>
-            <div id ="historicalBarChart"></div>
+            
         </div>  
     </div>
     </section>
@@ -287,7 +289,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="bakeoffLineChart.js"></script>
-     <script src="bakeoffBarChart.js"></script>
+    <script src="bakeoffBarChart.js"></script>
+    <script src="bakeoffRedditChart.js"></script>
 
     <script>
     /*************

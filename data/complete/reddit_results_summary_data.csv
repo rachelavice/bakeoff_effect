@@ -1,0 +1,3 @@
+,subreddit,n_technicals,pct_nonzero_post_air,mean_lift_diff,median_lift_diff,wilcoxon_p_value
+0,r/baking,67,4.477611940298507,-5.525491655241791e-06,0.0,0.7532
+1,r/bakeoff,14,57.14285714285714,0.007095168065776372,0.0036894923258559,0.0117
