@@ -46,13 +46,23 @@
             linear-gradient(to bottom, var(--grid-color) var(--grid-strength), transparent var(--grid-strength));
         }
 
-        #hero_linechart{
+        /* #hero_linechart{
             width:100%;
             height:60vh;
             margin: auto;
             padding-bottom: 10%;
-        }
+        } */
 
+        #historicalBarChart,
+        #redditBarChart,
+        #hero_linechart,
+        #leaderboardScatter {
+            width:100%;
+            height:60vh;
+            margin: auto;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
 
         #small-multiples-grid {
             display: grid;
@@ -65,14 +75,7 @@
             padding-bottom: 10%;
         }
 
-        #historicalBarChart,
-        #redditBarChart {
-            width:100%;
-            height:60vh;
-            margin: auto;
-            padding-top: 10%;
-            padding-bottom: 10%;
-        }
+
 
         .multiple-cell h4 {
             font-size: 12px;
@@ -158,7 +161,7 @@
             }
 
         footer {
-            background: #c4afcc;
+            background: #331832;
             text-align: center;
             font-size: 14px;
             padding-top: 10vh;
@@ -175,7 +178,7 @@
             }
 
         footer a{
-            color: #629b95;
+            color: #C4AFCC;
             font-weight: bold;
         }
 
@@ -263,7 +266,7 @@
         <h2>The Bake Along Leaderboard</h2>
         <div class="body-content">
             <p>Take a look below to see what Great British Bake Off fans are searching for, what they’re actually baking, and what challenges rise to the top.</p>
-            
+            <div id="leaderboardScatter"></div>
         </div>  
     </div>
     </section>
@@ -273,12 +276,19 @@
     <footer>
         <div class="content">
         <div>
-            <h2>Methodology</h2>
-            <p class="footer-p">The data for this story draws on the top 30 highest-rated U.S. television programs for each broadcast season from 1950 to 2025, as ranked by <a href="https://www.nielsen.com/about-us/about/">Nielsen Media Research</a> and compiled on <a href="https://en.wikipedia.org/wiki/Top-rated_United_States_television_programs_by_season">Wikipedia</a>.</p>
-            <p class="footer-p">Each show was matched against <a href="https://www.themoviedb.org/">The Movie Database (TMDB) data</a> to identify genre. For the purposes of this study, television programs were filtered to comedies.</p>
+        <h2>Methodology</h2>
+        <p class="footer-p">Episode and technical challenge data for The Great British Bake Off was obtained through the publicly available dataset maintained by Sarah Vitvitskiy on <a href= "https://www.kaggle.com/datasets/sarahvitvitskiy/great-british-bake-off-results-seasons-1-14?">Kaggle.</a>, covering Series 1 through 14 (2010–2023). It was enriched with data from the <a href="https://thegreatbritishbakeoff.co.uk/recipes/all/?collection=Technical+bakes&showFilter=false">official Great British Bake Off website</a>.
+        
+        <p class="footer-p">Technical challenge names were cleaned to remove embedded quantities (e.g. "12 custard creams" became "custard creams") to enable consistent matching across data sources.</p>  
+           
+        <p class="footer-p">Search interest data was pulled from <a href="https://trends.google.com/">Google Trends</a> via the pytrends library, comparing search volume for each technical bake's recipe name in the 30 days before and after its UK air date, restricted to Great Britain. 7-day data is displayed in the write-up.</p>
 
-        </div>
-            <p class="footer-p">You can find the code for this analysis <a href="https://github.com/rachelavice/evolution_of_laugh_tracks">here</a>.</p>
+        <p class="footer-p">The Great British Bake Off has different airdates depending on whether it aired in the U.K. on Channel 4 or in the U.S. on Netflix. To simplify this analysis, airdates referenced were the U.K. Channel 4 ones. For consistency, Google Search Trend Data was also constrained to Great Britain.</p> 
+
+        <p class="footer-p">Reddit activity was measured by pulling posts from r/baking and r/bakeoff mentioning each technical bake, comparing the share of posts in the 21 days following an episode's air date against a pre-air baseline of the 30 days preceding the episode's air date.</p>
+        <p class="footer-p">A bake was classified as "historical" if it had negligible or no measurable search interest in the 30 days prior to its air date and wasn't a generic bake (e.g., "red velvet cake").</p>
+    </div>
+            <p class="footer-p">You can find the code for this analysis <a href="https://github.com/rachelavice/bakeoff_effect">here</a>.</p>
         </div>
     </footer>
         
@@ -291,94 +301,6 @@
     <script src="bakeoffLineChart.js"></script>
     <script src="bakeoffBarChart.js"></script>
     <script src="bakeoffRedditChart.js"></script>
-
-    <script>
-    /*************
-    
-    This is the JavaScript that makes the scrolly work 
-    
-    *************/
-
-    /* 
-    This part attaches a scroll to the element with id="scrolly-images"    
-    */
-    (() => {
-    const scroller = scrollama();
-
-    scroller
-        .setup({
-        parent: document.querySelector("#scrolly-timeline"),
-        step: "#scrolly-timeline .step",
-        offset: 0.5,
-        debug: false,
-        })
-        .onStepEnter(function ({ element, index, direction }) {
-        const event = new CustomEvent("stepin", { detail: { direction: direction } });
-        element.dispatchEvent(event);
-        })
-        .onStepExit(function ({ element, index, direction }) {
-        if (direction === "up" && element.previousElementSibling) {
-            const event = new CustomEvent("stepin", { detail: { direction: direction } });
-            element.previousElementSibling.dispatchEvent(event);
-        }
-        });
-
-    window.addEventListener("resize", scroller.resize);
-    })();
-
-    d3.select("#tl-step1").on('stepin', () => showTimelineEventsUpTo("laff-box"));
-    d3.select("#tl-step2").on('stepin', () => showTimelineEventsUpTo("canned"));
-    d3.select("#tl-step3").on('stepin', () => showTimelineEventsUpTo("groucho"));
-    d3.select("#tl-step4").on('stepin', () => showTimelineEventsUpTo("studio"));
-    d3.select("#tl-step5").on('stepin', () => showTimelineEventsUpTo("silence"));
-    </script>
-
-    <script>
-    /*************
-    
-    This is the JavaScript that makes the scrolly work 
-    
-    *************/
-
-    /* 
-    This part attaches a scroll to the element with id="scrolly-images"    
-    */
-    (() => {
-    const scroller = scrollama();
-
-    scroller
-        .setup({
-        parent: document.querySelector("#scrolly-linecharts"),
-        step: "#scrolly-linecharts .step",
-        offset: 0.5,
-        debug: false,
-        })
-        .onStepEnter(function ({ element, index, direction }) {
-        const event = new CustomEvent("stepin", { detail: { direction: direction } });
-        element.dispatchEvent(event);
-        })
-        .onStepExit(function ({ element, index, direction }) {
-        if (direction === "up" && element.previousElementSibling) {
-            const event = new CustomEvent("stepin", { detail: { direction: direction } });
-            element.previousElementSibling.dispatchEvent(event);
-        }
-        });
-
-    window.addEventListener("resize", scroller.resize);
-    })();
-
-    d3.select("#linechart-step1").on('stepin', () => emphasizeLineChart("canned_laugh_track"));
-    d3.select("#linechart-step2").on('stepin', () => emphasizeLineChart("studio_audience"));
-    d3.select("#linechart-step3").on('stepin', () => emphasizeLineChart("no_added_laughter"));
-    </script>
-
-  <style>
-    /* Change this to adjust the padding between steps */
-    .step {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-    }
-  </style>
+    <script src="bakeoffLeaderboardScatterplot.js"></script>
 </body>
 </html>
