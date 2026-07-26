@@ -1,6 +1,6 @@
 //IIFE
 (function() {
-    var margin = { top: 60, right: 30, bottom: 120, left: 60 };
+    var margin = { top: 60, right: 30, bottom: 120, left: 80 };
 
     // append the svg object to the body of the page
     var svg = d3.select("#historicalBarChart")
@@ -85,6 +85,24 @@
             .call(d3.axisLeft(y)).attr("font-size", "14px");
 
         var barsGroup = g.append("g").attr("class", "bars");
+
+        g.append("text")
+            .attr("class", "chart-title")
+            .attr("x", width / 2)
+            .attr("y", -margin.top / 2)
+            .attr("text-anchor", "middle")
+            .style("font-size", "clamp(12px, 2vw, 24px)")
+            .style("fill", "#1D1E2C")
+            .text("Obscure Bakes See Renewed Interest");
+
+        g.append("text")
+            .attr("class", "y-label")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", -60)
+            .attr("text-anchor", "middle")
+            .style("font-size", "clamp(14px, 2vw, 18px)")
+            .text("Google Search Trend Share");
 
     // Bars with rough js library to make them look sketchy 
         chartData.forEach((d, i) => {

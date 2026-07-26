@@ -1,7 +1,7 @@
 //IIFE
 (function() {
   // define margin
-  var margin = { top: 60, right: 30, bottom: 30, left: 40 };
+  var margin = { top: 200, right: 30, bottom: 100, left: 100 };
 
   // append the svg object to the body of the page
   var svg = d3.select("#hero_linechart")
@@ -58,7 +58,7 @@
 
     g.append("g")
       .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x)).attr("font-size", "14px");
+      .call(d3.axisBottom(x)).attr("font-size", "clamp(8px, 2vw, 14px)");
 
     // Add Y axis
     var y = d3.scaleLinear()
@@ -66,18 +66,33 @@
       .range([ height, 0 ]);
 
     g.append("g")
-      .call(d3.axisLeft(y)).attr("font-size", "14px");
+      .call(d3.axisLeft(y)).attr("clamp(8px, 2vw, 14px)");
 
-    // // Add the airdate line
-    // g.append("path")
-    //   .datum(chartData)
-    //   .attr("fill", "none")
-    //   .attr("stroke", "#c4afcc")
-    //   .attr("stroke-width", 3)
-    //   .attr("d", d3.line()
-    //     .x(function(d) { return x(d.day_offset) })
-    //     .y(function(d) { return y(d.value) })
-    //     )
+    g.append("text")
+        .attr("class", "chart-title")
+        .attr("x", width / 2)
+        .attr("y", -margin.top / 2)
+        .attr("text-anchor", "middle")
+        .style("font-size", "clamp(12px, 2vw, 24px)")
+        .style("fill", "#1D1E2C")
+        .text("Search Data for Fondant Fancies Spikes");
+
+    g.append("text")
+        .attr("class", "y-label")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)
+        .attr("y", -60)
+        .attr("text-anchor", "middle")
+        .style("font-size", "clamp(14px, 2vw, 18px)")
+        .text("Google Search Trend Share");
+
+    g.append("text")
+        .attr("class", "x-label")
+        .attr("x", width/2)
+        .attr("y", height + 60)
+        .attr("text-anchor", "middle")
+        .style("font-size", "clamp(14px, 2vw, 18px)")
+        .text("Days Since Episode Air");
 
     drawAirateLine();
 
@@ -96,11 +111,12 @@
         .attr("x", x(0))
         .attr("y", -32)
         .attr("text-anchor", "middle")
-        .attr("font-size", "14px")
+        .attr("font-size", "clamp(8px, 2vw, 14px)")
+        .attr("font", "")
         .text("air date");
 
     // rough.js line 
-     var points = chartData.map(d => [x(d.day_offset), y(d.value)]);
+    var points = chartData.map(d => [x(d.day_offset), y(d.value)]);
 
     var lineGroup = g.append("g").attr("class", "rough-line");
 

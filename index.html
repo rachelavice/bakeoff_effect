@@ -23,7 +23,7 @@
             margin:auto;
             padding: 2em;
             max-width: 90vw;
-            font-size: 22px;
+            font-size: clamp(14px, 1.5vw, 20px);
             font-family: "Lato", sans-serif;
             color: #223843; 
         }
@@ -47,10 +47,9 @@
         }
 
         #hero_linechart{
-            width:50vw;
+            width:100%;
             height:60vh;
             margin: auto;
-            padding-top: 10%;
             padding-bottom: 10%;
         }
 
@@ -60,12 +59,13 @@
             grid-template-columns: repeat(7, 1fr);
             grid-template-rows: repeat(3, 1fr);
             gap: 2.5em;
-            width: 55vw;
+            width: 100%;
             margin: auto;
+            padding-top: 120px;
         }
 
         #historicalBarChart {
-            width:50vw;
+            width:100%;
             height:60vh;
             margin: auto;
             padding-top: 10%;
@@ -86,9 +86,9 @@
             }
 
 
-        .intro-wrapper{
+        /* .intro-wrapper{
             position: relative;
-            }
+            } */
 
         .intro {
             display: flex;
@@ -114,7 +114,7 @@
         h1 {
             font-family: "Homemade Apple", cursive;
             font-weight: bold;
-            font-size: 68px;
+            font-size: clamp(36px, 7vw, 68px);
             margin: auto;
             padding-bottom: 1vh;
             }
@@ -122,30 +122,28 @@
         h2 {
             font-family: "Lato", sans-serif;
             font-weight: bold;
-            font-size: 36px;
+            font-size: clamp(24px, 1.5vw, 36px);
             line-height: 42px;
             padding-bottom: 16px;
         }
 
         /* Smaller tablets and mobiles */
-        @media (max-width: 768px) {
-            body {
-                font-size: 14px;
-            }
-            h1{
-                font-size:32px;
-            }
-            .subhead{
-                font-size: 16px;
-            }
-            h2{
-                font-size:24px;
-            }
+        @media (max-width: 1000px) {
+
+            #small-multiples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            gap: 2em;
+            width: 100%;
+            margin: auto;
+            padding-top: 120px;
+        }
         }
 
         .subhead {
             font-family: "Lato", sans-serif;
-            font-size: 24px;
+            font-size: clamp(16px, 2vw, 24px);
             justify-content: center;
             margin-bottom: 0;
             padding-bottom: .5vh;
@@ -153,12 +151,12 @@
             }
                 
         a {
-            color: #e48fb4;
+            color: #629b95;
             font-weight: bold;
             }
 
         footer {
-            background: #FF4365;
+            background: #c4afcc;
             text-align: center;
             font-size: 14px;
             padding-top: 10vh;
@@ -175,7 +173,7 @@
             }
 
         footer a{
-            color: #33A1FD;
+            color: #629b95;
             font-weight: bold;
         }
 
@@ -213,34 +211,62 @@
             <p> Because I am not a resident of the U.K. and don’t qualify to compete myself, this looked less like filling out an application to the show and more like baking along with that season’s challenges.</p>
 
             <p>It turns out, I was hardly alone. </p>
-
-            <p>With the summer drawing to a close, on the heels of the new season of GBBO premiering, I set out to understand if there are more fans like me, what moves them, and where I might find them.</p>
         </div> 
       </div>
     </div>
+    <section id="search-data">
     <div class="content">
         <h2>The Weekly Muse</h2>
         <div class="body-content">
-            <p>[placeholder text about the search trend spikes] </p>
-        </div>
-        <div id ="hero_linechart"></div>
+            <p>Google Search trend data confirms that Bake Off viewers across Great Britain search for recipes for that week’s technical challenge after the episode airs. </p>
+            <p>Take this search trend data for “fondant fancies” in Great Britain. Contestants were tasked with this bake in the Season 3 finale of the show. In the week preceding this episode’s air date, searches for “fondant fancies recipe” were negligible. After the show aired, search trends spiked.</p>
+            <div id ="hero_linechart"></div>
+            <p>It wasn’t just fondant fancies this happened with, either. Since the show’s inception, the Great British Bake Off technical challenges have served as a muse for those on the hunt for a new recipe to try that week. </p>
+            <div id ="small-multiples-grid"></div>
+        </div>  
     </div>
-    
-    <div id ="small-multiples-grid"></div>
-    <div id ="historicalBarChart"></div>
-  </div>
-  
-  
-
-    <section class="closing-wrapper">
-        <div class="closing">
-            <h2>What does it mean that we stopped laughing together?</h2>
-            <p>Over the past 75 years, there have been three distinct changes in how comedy television shows leverage laughter. From cueing us with artificial laugh tracks to a turn to "authenticity" with the use of a live studio audience to the absence of these cues altogether.</p>
-            <p>And while it's hard to say for certain what is ultimately driving these trends, it feels worth stating that the way we watch television has fundamentally changed, and with it, our relationship to comedy has changed too.</p>
-            <p>Gone are the days of my parents' generation, where friends and family congregated around a television set to watch this week's new episode of a favorite household sitcom. Over time, this routine has given way to something more insular, and a little quieter, as we have shows at our fingertips to watch in solitude.</p>
-        </div>
     </section>
 
+    <section id="historical-bakes">
+    <div class="content">
+        <h2>Resurrecting Forgotten Bakes</h2>
+        <div class="body-content">
+            <p>If you’ve ever watched an episode of the Great British Baking Show, you’ve probably been stumped by some of the bakes. I’ve certainly found myself sitting there wondering, “What is a Caterpillar cake?” and being absolutely delighted to learn that it’s a chocolate swiss roll that is decorated to look like a friendly caterpillar.</p>
+            <p>This is seemingly by design, as the technical challenges bring historical, regionally specific, and otherwise obscure baked goods to the limelight. </p>
+            <p>Some such bakes have included pork pies, treacle tarts, queen of puddings, fondant fancies, florentines, and wagon wheels. </p>
+            <div id ="historicalBarChart"></div>
+            <p>Prior to their air date, searches for these bakes barely registered and some had no measurable search interest at all. Post air, search interest in these recipes was renewed.</p>
+        </div>  
+    </div>
+    </section>
+
+    <section id="baking-share-data">
+    <div class="content">
+        <h2>Are people actually baking these recipes, or just searching?</h2>
+        <div class="body-content">
+            <p>While recipe search trend data indicates intent to bake, I found myself interested in one step further: what technicals are people actually baking?</p>
+            <p>To understand this, I took to Reddit to find out.</p>
+            <p>While I was anticipating baking communities on Reddit to substantiate my Google Search trend findings, it wasn't quite so clear cut.</p>
+            <p>Across over half a million posts in the r/baking subreddit since the first episode of The Great British Bake Off aired in August of 2010, very few were from bakers showing off their own GBBO technical skills in the weeks following an episode airing.</p>
+            <p>It turns out, those that bake along weren’t sharing in r/baking. They were, however, sharing their attempts, triumphs and defeats in the r/bakeoff subreddit.</p>
+            <p>While r/baking saw no lift in the share of posts about GBBO technicals in the weeks after an episode aired, r/bakeoff saw a significant lift.</p>
+            <div id ="historicalBarChart"></div>
+            <p>The Bake Off Effect is real. People do search for recipes featured on the Great British Bake Off, and they follow through with baking them. However, its effect on baking is concentrated within the fandom, rather than a diffuse impact that ripples through the home baking community.</p>
+        </div>  
+    </div>
+    </section>
+
+    <section id="leaderboard">
+    <div class="content">
+        <h2>The Bake Along Leaderboard</h2>
+        <div class="body-content">
+            <p>Take a look below to see what Great British Bake Off fans are searching for, what they’re actually baking, and what challenges rise to the top.</p>
+            <div id ="historicalBarChart"></div>
+        </div>  
+    </div>
+    </section>
+
+  </div>
 
     <footer>
         <div class="content">
