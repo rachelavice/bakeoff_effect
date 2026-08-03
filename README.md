@@ -25,8 +25,8 @@ The findings suggest the effect is real, but concentrated: search interest relia
 
 1. **Clean technical challenge names** — strip embedded quantities (e.g. `"12 custard creams"` → `"custard creams"`) and normalize whitespace/casing so names match consistently across every data source.
 2. **Build a stable `technical_id`** (`gbbo_s{season}_e{episode}`) as the join key across all tables, rather than relying on free-text bake names.
-3. **Pull Google Trends data** for each technical's recipe name, comparing a 30-day pre-air baseline against a 7-day post-air average, restricted to Great Britain and anchored to the UK Channel 4 air date.
-4. **Pull Reddit post data** for r/baking and r/bakeoff, comparing the share of posts mentioning each technical in the 21 days after air against a 30-day pre-air baseline.
+3. **Pull Google Trends data** for each technical's recipe name, comparing a 30-day pre-air baseline against a 30-day post-air average, restricted to Great Britain and anchored to the UK Channel 4 air date.
+4. **Pull Reddit post data** for r/baking and r/bakeoff, comparing the share of posts mentioning each technical in the 30 days after air against a 30-day pre-air baseline.
 5. **Merge** all sources into a single master dataframe, keyed on `technical_id`.
 6. **Visualize** with D3.js, styled with [Rough.js](https://roughjs.com/) for a hand-illustrated, sketchbook aesthetic.
 
